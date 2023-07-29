@@ -29,7 +29,7 @@ jobs:
                   name: Deploy via ssh
                   command: |
                       echo Starting deploy to server
-                      ssh -oStrictHostKeyChecking=no -v $SSH_USER@$SSH_HOST 'cd /home/phamhongphuc1403/express-example && git fetch origin && git checkout main && git fetch origin && git reset --hard origin/main && npm i && pm2 restart api'
+                      ssh -oStrictHostKeyChecking=no -v $SSH_USER@$SSH_HOST 'cd ~/express-example && git fetch origin && git checkout main && git fetch origin && sudo chmod 777 ./script/deploy.sh && ./script/deploy.sh'
 workflows:
     build-and-deploy:
         jobs:

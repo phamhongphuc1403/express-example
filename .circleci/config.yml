@@ -24,7 +24,7 @@ jobs:
         working_directory: ~/express-example
         steps:
             - add_ssh_keys:
-                  fingerprints: '85:eb:15:5d:bd:1c:6b:90:f3:31:31:11:e1:39:27:66'
+                  fingerprints: 'ef:c1:b9:b9:44:e0:54:07:df:ec:65:a1:7f:60:d1:5e'
             - run:
                   name: Deploy via ssh
                   command: |

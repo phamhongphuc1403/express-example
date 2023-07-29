@@ -17,9 +17,7 @@ jobs:
             - run:
                   name: Update NPM version
                   command: 'sudo npm install -g npm@latest'
-            - run:
-								  name: Install dependencies
-								  command: 'npm i'
+            - run: npm install
     deploy:
         machine:
             enabled: true

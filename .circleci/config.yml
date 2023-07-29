@@ -24,12 +24,12 @@ jobs:
         working_directory: ~/express-example
         steps:
             - add_ssh_keys:
-                  fingerprints: 'ef:c1:b9:b9:44:e0:54:07:df:ec:65:a1:7f:60:d1:5e'
+                  fingerprints: '85:eb:15:5d:bd:1c:6b:90:f3:31:31:11:e1:39:27:66'
             - run:
                   name: Deploy via ssh
                   command: |
                       echo Starting deploy to server
-                      ssh -oStrictHostKeyChecking=no -v $SSH_USER@$SSH_HOST 'cd ~/express-example && git fetch origin && git checkout main && git fetch origin && git reset --hard origin/main && sudo chmod 777 ./script/deploy.sh && ./script/deploy.sh'
+                      ssh -oStrictHostKeyChecking=no -v $SSH_USER@$SSH_HOST 'cd /home/phamhongphuc1403/express-example && git fetch origin && git checkout main && git fetch origin && git reset --hard origin/main && npm i && pm2 restart api'
 workflows:
     build-and-deploy:
         jobs:
